@@ -1,0 +1,285 @@
+//readonly
+
+#!/bin/sh
+var="abc"
+echo "$var"
+
+readonly pqr
+pqr=5
+echo "$pqr"
+
+
+a=5
+unset a echo"$a"
+
+//operators
+
+sum=$((10+20))
+sub=$((10-20))
+mul=$((10*20))
+
+div=$((10%20))
+echo $sum
+
+echo $sub
+echo $mul
+echo $div
+
+
+sqr=$((10**2))
+echo $sqr
+
+OR
+
+read a1
+read a2
+
+sum=$(($a1+$a2))
+sub=$(($a1-$a2))
+mul=$(($a1*$a2))
+
+div=$(($a1/$a2))
+echo $("Sum: $sum")
+
+echo $sub
+echo $mul
+echo $div
+
+
+mod=$(($a1%$a2))
+echo $mod
+
+
+//voting age
+
+#voting
+
+read $age
+read $vote_age
+
+if [ $age -gt $vote_age ]
+then
+	echo "Eligible"
+else
+	echo "Not eligible"
+fi
+
+
+//decalre var
+
+#!/bin/sh
+echo "Hello"
+var=100
+echo "variable value is $var"
+
+
+//grep cmd
+
+$cat >file1.txt
+ 
+unix is a great os. unix is opensource. unix is free os.
+learn operating systems.
+Unix linux which one you choose.
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+
+$grep “unix” sample.txt
+$grep -i "UNix" file1.txt  #ignore case sensitivity
+$grep -c "unix" file1.txt  # Displaying the count of number of matches
+$grep -l "unix" *  #Display the file names that matches the pattern
+$ grep -w "unix" file1.txt # Checking for the whole words in a file 
+$ grep -o "unix" file1.txt  #Displaying only the matched pattern
+$ grep -n "unix" file1.txt  #Show line number while displaying the output
+$ grep -v "unix" file1.txt  #Inverting the pattern match
+$ grep "^unix" file1.txt  #Matching the lines that start with a string
+$ grep "os.$" file1.txt  #Matching the lines that end with a string
+
+$cat >pattern.txt #Takes patterns from file, one per line
+Unix
+unix
+UNIX
+ 
+$grep –f pattern.txt  file1.txt
+
+file1.txt
+unix is a great os. unix is opensource. unix is free os.
+learn operating systems.
+Unix linux which one you choose.
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+This is yolo.
+Yolo is good
+Can you write yyolo like this or like yyloo.
+
+pattern.txt
+yolo
+Yolo
+yyolo
+yyloo
+
+
+
+//function add
+f1()
+{
+c=$(expr $1 + $2)
+echo "Sum is : $c"
+}
+
+f1 1 2 
+
+
+//switch case 
+
+#pseudocode
+<<comment
+'switch condition'
+case word in 
+pattern1)
+stmt 1
+;;
+patternn)
+stmt n
+;;
+*)
+default condition stmt
+;;
+esac
+comment
+
+
+# echo read your choice ,using 'read' the variable ch
+<<comment
+echo "Enter a choice from 1 and 2"
+read ch
+
+case $ch in  
+1)
+echo "hi"
+;;
+2)
+echo "hello";;
+*)
+echo "stmt invalid"
+;;
+esac
+comment
+
+#using string as choice
+
+echo "Enter a choice :"
+read ch
+
+case $ch in  
+'a')
+echo "hi"
+;;
+'b')
+echo "hello";;
+*)
+echo "stmt invalid"
+;;
+esac
+
+
+//switch case files
+
+
+
+echo -e "Choose \n 1 .Including hidden files\n 2.Excluding hidden files\nEnter a choice:"
+read ch
+case $ch in 
+1)
+echo "All files shown:"
+ls -a
+;;
+2)
+echo "Hidden files not shown:"
+ls
+;;
+*)
+echo "Give a proper option"
+;;
+esac
+
+
+
+//for-do
+
+<<comment
+for i in  1 2 3 4 5
+do
+echo $i
+done
+comment
+
+#using seq to define range in for loop
+<<comment
+for i in `seq 1 10`
+do
+echo $i
+done
+comment
+
+#for-do using break
+<<comment
+for i in `seq 1 5`
+do
+if [[ $i -eq 3 ]]
+then
+	break
+fi
+echo $i
+done
+comment
+
+#for-do using continue
+for i in `seq 1 5`
+do
+if [[ $i -eq 3 ]]
+then
+	continue
+fi
+echo $i
+done
+
+
+//until
+
+
+
+<<command
+until[condition]
+do
+	stmt
+done
+
+Note: Until command is executes a set of statemets until a condn is true
+command
+
+#Increment from 0 to until it reaches greater than 5
+
+i=0
+until [ $i -gt 5 ]
+do
+	echo $i
+	i=`expr $i + 1`
+done
+
+
+
+//input without echo
+]read -p "Enter your choice: " ch
+case $ch in 
+1)echo "hi";;
+2)echo "hello";;
+*)echo "invalid";;
+esac
+
+
+
+
+
+
+
+
+
+
